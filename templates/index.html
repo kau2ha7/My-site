@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css" integrity="sha384-PRrgQVJ8NNHGieOA1grGdCTIt4h21CzJs6SnWH4YMQ6G5F5+IEzOHz67L4SQaF0o" crossorigin="anonymous">
+
+    <title>MySite</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">MySite</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/Features">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Aboutus">About Us</a>
+              </li>
+              
+              
+              <li class="nav-item">
+                <a class="nav-link" href="/Contactus">Contact Us</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </nav>
+
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Welcome to my site!</strong> You can edit texts here
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div class = "container">
+        <form action="/analyze" method="post">  {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">!Enter Your Text here</label>
+            <textarea class="form-control" name = 'text' id="exampleFormControlTextarea1" rows="5"></textarea>
+          </div>
+        
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" name ='removepunc' role="switch" id="flexSwitchCheckDefault1">
+          <label class="form-check-label" for="flexSwitchCheckDefault1">Remove the punctuations</label>
+        </div>
+
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" name ='fullcaps' role="switch" id="flexSwitchCheckDefault2">
+          <label class="form-check-label" for="flexSwitchCheckDefault2">Capitalize the text</label>
+        </div>
+
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" name ='newlineremover' role="switch" id="flexSwitchCheckDefault3">
+          <label class="form-check-label" for="flexSwitchCheckDefault3">Remove the new line</label>
+        </div>
+
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" name ='spaceremover' role="switch" id="flexSwitchCheckDefault4">
+          <label class="form-check-label" for="flexSwitchCheckDefault4">Remove the extra space between the sentence</label>
+        </div>
+
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" name ='charcount' role="switch" id="flexSwitchCheckDefault5">
+          <label class="form-check-label" for="flexSwitchCheckDefault5">Counts the number of character</label>
+        </div>
+        <button type="submit" class="btn btn-dark mt-2">Analyze Text </button>
+      </form>
+      </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
